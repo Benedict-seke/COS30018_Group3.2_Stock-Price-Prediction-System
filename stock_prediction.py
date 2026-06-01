@@ -112,18 +112,11 @@ def load_data(data_dir = "stock_data", DATA_SOURCE = "yahoo", COMPANY = 'CBA.AX'
         x_test,  y_test  = x[split_index:], y[split_index:]
     elif split_method == 'random':
         train_data, test_data = train_test_split(x, y, train_size= 0.8, random_state= 42, shuffle=True)
-    filename = "data.npz"
-    if os.path.exists(filename):
-        loaded = np.load('data.npz')
-        x_train = loaded["x_train"]
-        y_train = loaded["y_train"]
-        x_test = loaded["x_test"]
-        y_test = loaded["y_test"]   
-    else:
-        np.savez('data.npz', x_train=x_train, y_train=y_train, x_test=x_test, y_test=y_test)
+    
+    np.savez('data.npz', x_train=x_train, y_train=y_train, x_test=x_test, y_test=y_test)
 
 #Task 3C
-def candel_chart(data, n_day=1):
+def candle_chart(data, n_day=1):
     df = data.copy()
     if n_day >= 1:
         fplt.plot(df, type = 'candle', style = 'charles', title = '{COMPANY} candel chart in {n_day} days', y_label = 'Price', x_label = 'Datetime', volume = True, figsize = 20, ylabel_lower='Shares\nTraded',)
