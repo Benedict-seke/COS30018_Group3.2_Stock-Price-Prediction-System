@@ -1,0 +1,7 @@
+tensorflow
+matplotlib
+numpy
+pandas
+yahoo_fin
+pandas-datareader
+scikit-learn
