@@ -4,5 +4,9 @@ numpy
 pandas
 yahoo_fin
 pandas-datareader
+<<<<<<< HEAD
 sklearn
 mplfinance
+=======
+scikit-learn
+>>>>>>> b5341dec4851782ee07d5e0377e4754205c470e0
